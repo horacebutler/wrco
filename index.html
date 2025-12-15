@@ -1,402 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>When Rocks Cry Out by Horace Butler | #1 Bestseller</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Horace Butler | Coming Soon</title>
+  <meta name="description" content="Horace Butler – Official site coming soon." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-        body {
-            font-family: 'Georgia', serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f8f8f8;
-        }
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --fg: #f5f5f5;
+      --muted: #a1a1aa;
+      --accent: #d4af37; /* muted gold */
+    }
 
-        header {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            color: #fff;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
+    html, body {
+      height: 100%;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at top, #141414, #000);
+      color: var(--fg);
+    }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #d4af37;
-        }
+    .container {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
+    .card {
+      max-width: 900px;
+      width: 100%;
+      padding: 4rem 3rem;
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+      position: relative;
+      overflow: hidden;
+    }
 
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent 40%, rgba(212,175,55,0.12), transparent 60%);
+      opacity: 0.6;
+      pointer-events: none;
+    }
 
-        .nav-links a:hover {
-            color: #d4af37;
-        }
+    .brand {
+      font-size: 0.9rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
 
-        .hero {
-            background: linear-gradient(135deg, #1a1a1a 0%, #3d3d3d 100%);
-            color: #fff;
-            padding: 4rem 2rem;
-            text-align: center;
-        }
+    h1 {
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+    }
 
-        .hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
+    h1 span {
+      color: var(--accent);
+    }
 
-        .book-cover {
-            max-width: 400px;
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.3);
-            transition: transform 0.3s;
-        }
+    p.lead {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 620px;
+      margin-bottom: 3rem;
+    }
 
-        .book-cover:hover {
-            transform: scale(1.05);
-        }
+    .divider {
+      height: 1px;
+      width: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      margin: 3rem 0;
+    }
 
-        .hero-text {
-            text-align: left;
-        }
+    .footer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-        .bestseller-badge {
-            display: inline-block;
-            background: #d4af37;
-            color: #1a1a1a;
-            padding: 0.5rem 1.5rem;
-            border-radius: 25px;
-            font-weight: bold;
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-        }
+    .footer span {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
 
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: #d4af37;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
+    .badge {
+      padding: 0.6rem 1.2rem;
+      border-radius: 999px;
+      border: 1px solid rgba(212,175,55,0.4);
+      color: var(--accent);
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: rgba(212,175,55,0.05);
+    }
 
-        .author {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            color: #ccc;
-        }
+    @media (max-width: 640px) {
+      .card {
+        padding: 3rem 2rem;
+      }
 
-        .tagline {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            line-height: 1.8;
-            color: #e0e0e0;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: #d4af37;
-            color: #1a1a1a;
-            padding: 1rem 3rem;
-            text-decoration: none;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            transition: all 0.3s;
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
-        }
-
-        .cta-button:hover {
-            background: #f0c54a;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.6);
-        }
-
-        .price {
-            font-size: 2rem;
-            color: #d4af37;
-            margin: 1rem 0;
-            font-weight: bold;
-        }
-
-        section {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-
-        .about-book {
-            background: #fff;
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: #1a1a1a;
-            text-align: center;
-        }
-
-        .book-description {
-            font-size: 1.1rem;
-            line-height: 1.9;
-            color: #555;
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .features {
-            background: #f0f0f0;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .feature-card {
-            background: #fff;
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #d4af37;
-        }
-
-        .testimonials {
-            background: #fff;
-        }
-
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .testimonial {
-            background: #f9f9f9;
-            padding: 2rem;
-            border-radius: 10px;
-            border-left: 4px solid #d4af37;
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 1rem;
-            color: #555;
-        }
-
-        .testimonial-author {
-            font-weight: bold;
-            color: #1a1a1a;
-        }
-
-        .order-section {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            color: #fff;
-            text-align: center;
-        }
-
-        .order-section h2 {
-            color: #d4af37;
-        }
-
-        footer {
-            background: #1a1a1a;
-            color: #fff;
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .social-links {
-            margin: 1rem 0;
-        }
-
-        .social-links a {
-            color: #d4af37;
-            text-decoration: none;
-            margin: 0 1rem;
-            font-size: 1.2rem;
-        }
-
-        @media (max-width: 768px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-            }
-
-            h1 {
-                font-size: 2rem;
-            }
-
-            .hero-text {
-                text-align: center;
-            }
-
-            .nav-links {
-                flex-direction: column;
-                gap: 1rem;
-            }
-        }
-    </style>
+      .footer {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">WHEN ROCKS CRY OUT</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#features">Why Read</a></li>
-                <li><a href="#order">Order Now</a></li>
-            </ul>
-        </nav>
-    </header>
+  <main class="container">
+    <section class="card">
+      <div class="brand">Horace Butler</div>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <div>
-               <img 
-                  src="wrco_book.jpg" 
-                  alt="When Rocks Cry Out book cover"
-                  class="book-cover">
+      <h1>
+        Something <span>Powerful</span><br />
+        Is Coming
+      </h1>
 
-            </div>
-            <div class="hero-text">
-                <span class="bestseller-badge">#1 BESTSELLER</span>
-                <h1>When Rocks Cry Out</h1>
-                <p class="author">by Horace Butler</p>
-                <p class="tagline">A journey through ancient mysteries and modern revelations. Discover the stories hidden in stone and the truths that echo through time.</p>
-                <div class="price">$24.99</div>
-                <a href="#order" class="cta-button">Order Your Copy Now</a>
-            </div>
-        </div>
+      <p class="lead">
+        The official Horace Butler experience is currently under construction.
+        A new platform is being crafted with purpose, clarity, and vision.
+      </p>
+
+      <div class="divider"></div>
+
+      <div class="footer">
+        <span>Launching soon • horacebutler.com</span>
+        <div class="badge">Coming Soon</div>
+      </div>
     </section>
-
-    <section id="about" class="about-book">
-        <h2>About the Book</h2>
-        <p class="book-description">
-            "When Rocks Cry Out" takes readers on an unforgettable journey through archaeological wonders and spiritual discoveries. Horace Butler masterfully weaves together historical research, personal exploration, and profound insights that challenge our understanding of the past and illuminate our present. From the mysterious ruins of Machu Picchu to the ancient stones that hold secrets of civilizations long past, this #1 bestseller reveals how the earth itself testifies to truths we've only begun to understand.
-        </p>
-    </section>
-
-    <section id="features" class="features">
-        <h2>Why Readers Love This Book</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">📚</div>
-                <h3>Compelling Research</h3>
-                <p>Extensively researched with fascinating historical details and archaeological evidence</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🌍</div>
-                <h3>Global Perspective</h3>
-                <p>Explores ancient sites and mysteries from cultures around the world</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">💡</div>
-                <h3>Thought-Provoking</h3>
-                <p>Challenges conventional thinking and inspires deeper reflection</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">✨</div>
-                <h3>Beautifully Written</h3>
-                <p>Engaging narrative that brings ancient history to life</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="testimonials" class="testimonials">
-        <h2>What Readers Are Saying</h2>
-        <div class="testimonial-grid">
-            <div class="testimonial">
-                <p class="testimonial-text">"A masterpiece that changed how I view history and spirituality. Butler's insights are profound and his storytelling is captivating."</p>
-                <p class="testimonial-author">— Sarah M., Verified Reader</p>
-            </div>
-            <div class="testimonial">
-                <p class="testimonial-text">"I couldn't put it down! This book opened my eyes to connections I never saw before. Absolutely brilliant."</p>
-                <p class="testimonial-author">— James R., Book Reviewer</p>
-            </div>
-            <div class="testimonial">
-                <p class="testimonial-text">"Horace Butler has given us a treasure. This is required reading for anyone interested in archaeology, history, or spiritual truth."</p>
-                <p class="testimonial-author">— Dr. Patricia L., Professor of History</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="order" class="order-section">
-        <h2>Order Your Copy Today</h2>
-        <p style="font-size: 1.2rem; margin: 2rem 0;">Join thousands of readers who have discovered the secrets hidden in stone</p>
-        <div class="price">$24.99</div>
-        <p style="margin: 1rem 0; color: #ccc;">Fast shipping | Secure payment via Stripe</p>
-        <a href="#" class="cta-button" onclick="alert('Connect this button to your GoDaddy Stripe payment integration'); return false;">Buy Now</a>
-        <p style="margin-top: 2rem; font-size: 0.9rem; color: #999;">Available in hardcover, paperback, and digital formats</p>
-    </section>
-
-    <footer>
-        <div class="footer-content">
-            <h3 style="color: #d4af37; margin-bottom: 1rem;">When Rocks Cry Out</h3>
-            <p>by Horace Butler</p>
-            <div class="social-links">
-                <a href="#">Facebook</a>
-                <a href="#">Twitter</a>
-                <a href="#">Instagram</a>
-                <a href="#">Email</a>
-            </div>
-            <p style="margin-top: 2rem; color: #888; font-size: 0.9rem;">© 2024 Horace Butler. All rights reserved.</p>
-        </div>
-    </footer>
+  </main>
 </body>
 </html>
